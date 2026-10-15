@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. BSWS Riau | Pelatihan Las & Sertifikasi Kompetensi Pekanbaru</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#243b53',
+                            800: '#102a43',
+                            900: '#0b1b2b',
+                            950: '#06101e',
+                        },
+                        gold: {
+                            400: '#f6c000',
+                            500: '#d9a300',
+                            600: '#b88600',
+                            700: '#946a00',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1b2b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #243b53;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d9a300;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f6c000 0%, #d9a300 50%, #fef08a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 70% 20%, rgba(217, 163, 0, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(36, 59, 83, 0.5) 0%, transparent 50%),
+                        #0b1b2b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-950/90 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 font-heading font-extrabold text-lg shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                        BS
+                    </div>
+                    <div>
+                        <span class="text-lg font-heading font-extrabold text-white tracking-tight">CV. BSWS <span class="gold-gradient-text">RIAU</span></span>
+                        <span class="block text-[10px] text-slate-400 font-medium tracking-widest uppercase">Barokah Sejati Welding School</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#program" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Layanan & Program</a>
+                    <a href="#profil" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Tentang Kami</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Lokasi & Kontak</a>
+                </nav>
+
+                <!-- CTA Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://wa.me/6287798801799?text=Halo%20CV.%20BSWS%20Riau,%20saya%20ingin%20berkonsultasi%20mengenai%20jadwal%20pelatihan%20dan%20sertifikasi." target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-heading font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-gold-500/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        WhatsApp Resmi
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-900 border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#program" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-navy-800 hover:text-gold-400">Layanan & Program</a>
+            <a href="#profil" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-navy-800 hover:text-gold-400">Tentang Kami</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-navy-800 hover:text-gold-400">Lokasi & Kontak</a>
+            <div class="pt-3 border-t border-white/10">
+                <a href="https://wa.me/6287798801799" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-gold-500 text-navy-950 font-bold text-sm py-2.5 rounded-xl block">
+                    Hubungi WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-bg text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-medium">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        Pusat Pelatihan Las & Sertifikasi Kompetensi Resmi Pekanbaru
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight">
+                        CV. Barokah Sejati <span class="gold-gradient-text">Welding School</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Lembaga pelatihan dan pengembangan keahlian industri terdepan di Riau. Menyediakan kursus pengelasan pipa & pelat profesional, sertifikasi profesi, pelatihan K3, hingga instalasi listrik siap kerja.
+                    </p>
+
+                    <!-- CTA Group -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#program" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-heading font-bold rounded-xl shadow-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i data-lucide="wrench" class="w-5 h-5"></i>
+                            Lihat Program Pelatihan
+                        </a>
+                        <a href="https://wa.me/6287798801799?text=Halo%20BSWS%20Riau,%20saya%20ingin%20mendaftar%20pelatihan." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 glass-card hover:bg-white/10 text-white font-semibold rounded-xl border border-white/15 transition-all text-center flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-gold-400"></i>
+                            Chat WhatsApp (+62 877-9880-1799)
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-heading font-extrabold text-white">Senin - Minggu</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Jam 07.00 - 17.15 WIB</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-heading font-extrabold text-white">Praktik</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Standar Industri & Migas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-heading font-extrabold text-white">Riau</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Lokasi Pekanbaru</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Element / Info Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-navy-500 rounded-3xl blur-2xl opacity-30"></div>
+                        
+                        <div class="relative bg-navy-900 border border-white/15 rounded-2xl p-6 shadow-2xl space-y-6">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400">
+                                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-sm font-semibold text-white">Lokasi Workshop & Kantor</h2>
+                                        <p class="text-xs text-slate-400">Kota Pekanbaru, Riau</p>
+                                    </div>
+                                </div>
+                                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">Buka Setiap Hari</span>
+                            </div>
+
+                            <div class="space-y-3 text-xs text-slate-300">
+                                <p class="flex items-start gap-2">
+                                    <i data-lucide="navigation" class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5"></i>
+                                    <span><strong>Alamat:</strong> Jl. Limbungan No.506, Limbungan, Rumbai Timur (Kec. Rumbai Bukit / Rumbai), Kota Pekanbaru, Riau 28266</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+                                    <span><strong>WhatsApp / Telp:</strong> +62 877-9880-1799</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+                                    <span><strong>Operasional:</strong> Senin – Minggu (07.00 – 17.15 WIB)</span>
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-gradient-to-r from-gold-500/15 to-transparent border-l-4 border-gold-500 flex items-center gap-3">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-gold-400 flex-shrink-0"></i>
+                                <div class="text-xs">
+                                    <p class="font-bold text-white">Pendaftaran Angkatan Baru</p>
+                                    <p class="text-slate-300">Hubungi nomor WhatsApp kami untuk konsultasi program.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LAYANAN & PROGRAM ================= -->
+    <section id="program" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Layanan & Program Keahlian</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-900 mt-2">
+                    Program Pelatihan & Sertifikasi Profesional
+                </h2>
+                <p class="text-slate-600 mt-4 text-base">
+                    Kami mencetak tenaga kerja terampil yang siap diterjunkan langsung ke industri manufaktur, konstruksi, perminyakan (migas), dan kelistrikan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Program 1: Welding -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="flame" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-900 mb-3">Pelatihan Pengelasan (Welding)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Pelatihan komprehensif berbagai teknik las, termasuk pelatihan intensif welder pipa (pipe welding) dan pelat dengan standar kualitas industri.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6287798801799?text=Halo%20BSWS%20Riau,%20saya%20tertarik%20dengan%20Pelatihan%20Pengelasan%20(Welding)." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 font-bold text-xs rounded-xl text-center transition-colors block">
+                        Daftar / Tanya Program
+                    </a>
+                </div>
+
+                <!-- Program 2: Sertifikasi Profesi -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="award" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-900 mb-3">Sertifikasi Profesi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Fasilitas uji kompetensi dan sertifikasi resmi untuk memastikan keahlian Anda diakui secara nasional dan sah untuk kebutuhan dunia kerja.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6287798801799?text=Halo%20BSWS%20Riau,%20saya%20tertarik%20dengan%20Sertifikasi%20Profesi." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 font-bold text-xs rounded-xl text-center transition-colors block">
+                        Daftar / Tanya Program
+                    </a>
+                </div>
+
+                <!-- Program 3: Pelatihan K3 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-900 mb-3">Pelatihan K3 (Safety)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Program Keselamatan dan Kesehatan Kerja (K3) yang wajib dikuasai untuk meminimalisir risiko kecelakaan kerja di lingkungan industri berat maupun konstruksi.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6287798801799?text=Halo%20BSWS%20Riau,%20saya%20tertarik%20dengan%20Pelatihan%20K3%20(Safety)." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 font-bold text-xs rounded-xl text-center transition-colors block">
+                        Daftar / Tanya Program
+                    </a>
+                </div>
+
+                <!-- Program 4: Instalasi Listrik -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="zap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-900 mb-3">Instalasi Listrik</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Pelatihan teknis kelistrikan dari tingkat dasar hingga terapan, membekali peserta dalam pemasangan, perawatan, dan troubleshooting sistem kelistrikan.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6287798801799?text=Halo%20BSWS%20Riau,%20saya%20tertarik%20dengan%20Pelatihan%20Instalasi%20Listrik." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 font-bold text-xs rounded-xl text-center transition-colors block">
+                        Daftar / Tanya Program
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROFIL / TENTANG KAMI ================= -->
+    <section id="profil" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Tentang Perusahaan</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-900">
+                        CV. Barokah Sejati Welding School (BSWS Riau)
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Berlokasi strategis di Kota Pekanbaru, Riau, CV. BSWS Riau hadir sebagai solusi pusat pelatihan kejuruan vokasi berkualitas tinggi. Kami berkomitmen untuk melahirkan tenaga ahli teknik las, keselamatan kerja (K3), dan instalasi listrik yang memiliki kompetensi nyata dan berdaya saing global.
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-600 flex items-center justify-center font-bold">✓</div>
+                            <span class="text-slate-700 font-medium text-sm">Instruktur berpengalaman langsung dari praktisi industri</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-600 flex items-center justify-center font-bold">✓</div>
+                            <span class="text-slate-700 font-medium text-sm">Fasilitas workshop praktik lengkap dan memadai</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-600 flex items-center justify-center font-bold">✓</div>
+                            <span class="text-slate-700 font-medium text-sm">Jadwal operasional fleksibel setiap hari (Senin s.d Minggu)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-navy-900 p-8 sm:p-10 rounded-3xl text-white shadow-xl space-y-6">
+                        <h3 class="text-xl font-heading font-bold text-gold-400 border-b border-white/10 pb-4">
+                            Informasi Kontak & Operasional
+                        </h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-1"></i>
+                                <span><strong>Alamat:</strong> Jl. Limbungan No.506, Limbungan, Rumbai Timur (Kec. Rumbai Bukit / Rumbai), Kota Pekanbaru, Riau 28266</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-gold-400 flex-shrink-0"></i>
+                                <span><strong>WhatsApp / Telepon:</strong> +62 877-9880-1799</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="clock" class="w-5 h-5 text-gold-400 flex-shrink-0"></i>
+                                <span><strong>Jam Operasional:</strong> Senin – Minggu, pukul 07.00 – 17.15 WIB</span>
+                            </li>
+                        </ul>
+                        <div class="pt-4">
+                            <a href="https://wa.me/6287798801799?text=Halo%20CV.%20BSWS%20Riau,%20saya%20ingin%20berkunjung%20ke%20lokasi%20workshop." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-heading font-bold rounded-xl text-center block shadow-lg transition-all text-sm">
+                                Hubungi via WhatsApp Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KONTAK & LOKASI SECTION ================= -->
+    <section id="kontak" class="py-20 bg-navy-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <span class="text-gold-400 font-semibold text-sm uppercase tracking-widest">Hubungi Kami</span>
+            <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+                Siap Meningkatkan Keahlian dan Karir Anda?
+            </h2>
+            <p class="text-slate-300 max-w-2xl mx-auto text-base">
+                Kunjungi workshop kami di Pekanbaru atau hubungi layanan pelanggan kami melalui WhatsApp untuk informasi pendaftaran kelas dan konsultasi program.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="https://wa.me/6287798801799?text=Halo%20CV.%20BSWS%20Riau,%20saya%20ingin%20mendaftar%20pelatihan." target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-bold rounded-xl shadow-lg transition-all flex items-center gap-2 text-base">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    WhatsApp: +62 877-9880-1799
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-navy-950 text-slate-400 pt-12 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center text-navy-950 font-heading font-extrabold text-base">BS</div>
+                        <span class="text-lg font-heading font-extrabold text-white">CV. BSWS <span class="gold-gradient-text">RIAU</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        CV. Barokah Sejati Welding School - Pusat Pelatihan Pengelasan, Sertifikasi Profesi, Pelatihan K3, dan Instalasi Listrik terpercaya di Pekanbaru, Riau.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Layanan Utama</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#program" class="hover:text-gold-400 transition-colors">Pelatihan Pengelasan (Welding Pipa & Pelat)</a></li>
+                        <li><a href="#program" class="hover:text-gold-400 transition-colors">Sertifikasi Profesi</a></li>
+                        <li><a href="#program" class="hover:text-gold-400 transition-colors">Pelatihan K3 (Safety Industri)</a></li>
+                        <li><a href="#program" class="hover:text-gold-400 transition-colors">Instalasi Listrik Dasar & Terapan</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Kontak & Operasional</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Jl. Limbungan No.506, Limbungan, Rumbai Timur (Kec. Rumbai Bukit / Rumbai), Kota Pekanbaru, Riau 28266</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+                            <span>+62 877-9880-1799</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+                            <span>Senin – Minggu (07.00 – 17.15 WIB)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-slate-500">
+                <p>&copy; 2026 CV. Barokah Sejati Welding School (BSWS Riau). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
